@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "NSData+CommomCrypto.h"
+#import "NSData+CommomCryptor.h"
 @interface ViewController ()
 
 @end
