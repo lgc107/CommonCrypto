@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6F3177F20BEE25F009DD15C /* NSData+CustomPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F3177E20BEE25F009DD15C /* NSData+CustomPadding.m */; };
 		B6FD01B920BA888900127944 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FD01B820BA888900127944 /* AppDelegate.m */; };
 		B6FD01BC20BA888900127944 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FD01BB20BA888900127944 /* ViewController.m */; };
 		B6FD01BF20BA888900127944 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FD01BD20BA888900127944 /* Main.storyboard */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6F3177D20BEE25F009DD15C /* NSData+CustomPadding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+CustomPadding.h"; sourceTree = "<group>"; };
+		B6F3177E20BEE25F009DD15C /* NSData+CustomPadding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+CustomPadding.m"; sourceTree = "<group>"; };
 		B6FD01B420BA888900127944 /* CommonCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FD01B720BA888900127944 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6FD01B820BA888900127944 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 				B6FD01B820BA888900127944 /* AppDelegate.m */,
 				B6FD01ED20BA88E400127944 /* NSData+CommomCryptor.m */,
 				B6FD01EC20BA88E400127944 /* NSData+CommomCryptor.h */,
+				B6F3177D20BEE25F009DD15C /* NSData+CustomPadding.h */,
+				B6F3177E20BEE25F009DD15C /* NSData+CustomPadding.m */,
 				B6FD01BA20BA888900127944 /* ViewController.h */,
 				B6FD01BB20BA888900127944 /* ViewController.m */,
 				B6FD01BD20BA888900127944 /* Main.storyboard */,
@@ -270,6 +275,7 @@
 				B6FD01BC20BA888900127944 /* ViewController.m in Sources */,
 				B6FD01C720BA888B00127944 /* main.m in Sources */,
 				B6FD01B920BA888900127944 /* AppDelegate.m in Sources */,
+				B6F3177F20BEE25F009DD15C /* NSData+CustomPadding.m in Sources */,
 				B6FD01EE20BA88E400127944 /* NSData+CommomCryptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
