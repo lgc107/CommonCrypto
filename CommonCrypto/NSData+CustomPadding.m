@@ -69,7 +69,8 @@
                    initializationVector: (id) iv
                                   error: (CCCryptorStatus *) error
 {
-    if (algorithm != kCCAlgorithmRC4 || algorithm != kCCAlgorithmRC2) {
+    // algorithm is not stream chiper
+    if (algorithm != kCCAlgorithmRC4 ) {
         NSAssert((mode == CcCryptorCBCMode && iv != nil && iv != NULL) || mode == CcCryptorECBMode, @"With CBC Mode , InitializationVector  must have value");
         NSAssert((mode == CcCryptorCBCMode && [iv length] >= 8) || mode == CcCryptorECBMode, @"With CBC Mode, InitializationVector  must be greater than 8 bits");
         if (mode == CcCryptorCBCMode && [iv length] < 8) {
@@ -140,14 +141,19 @@
     
     // From Brent Royal-Gordon (Twitter: architechies):
     //  Need to update buf ptr past used bytes when calling CCCryptorFinal()
-    status = CCCryptorFinal( cryptor, buf + bufused, bufsize - bufused, &bufused );
-    if ( status != kCCSuccess )
-    {
-        free( buf );
-        return ( nil );
+   
+    //  It is not necessary to call CCCryptorFinal() when performing
+    //symmetric encryption or decryption if padding is disabled, or
+    //   when using a stream cipher.
+    if (mode == CcCryptorPKCS7Padding) {
+        status = CCCryptorFinal( cryptor, buf + bufused, bufsize - bufused, &bufused );
+        if ( status != kCCSuccess )
+        {
+            free( buf );
+            return ( nil );
+        }
+        bytesTotal += bufused;
     }
-    
-    bytesTotal += bufused;
     
     NSData *result = [NSData dataWithBytesNoCopy: buf length: bytesTotal];
     
@@ -248,7 +254,7 @@ static NSData * bitPadding(CCOperation operation, CCAlgorithm algorithm ,CcCrypt
     if (padding == CcCryptorPKCS7Padding) {
         return  data;
     }
-    if (operation == kCCEncrypt && (algorithm != CcCryptoAlgorithmRC4 && algorithm != CcCryptoAlgorithmRC2)  ) {
+    if (operation == kCCEncrypt && (algorithm != CcCryptoAlgorithmRC4)  ) {
         NSMutableData *sourceData = data.mutableCopy;
         int blockSize = 8;
         switch (algorithm) {
@@ -317,7 +323,7 @@ static NSData * removeBitPadding(CCOperation operation, CCAlgorithm algorithm ,C
     if (padding == CcCryptorPKCS7Padding) {
         return sourceData;
     }
-    if (operation == kCCDecrypt && (algorithm != CcCryptoAlgorithmRC4 && algorithm != CcCryptoAlgorithmRC2) ) {
+    if (operation == kCCDecrypt && (algorithm != CcCryptoAlgorithmRC4) ) {
         
         int correctLength = 0;
         int blockSize = 8;
