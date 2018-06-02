@@ -9,7 +9,7 @@
 // 简单的加密实现.若有问题可以私信我 相关简书网址为：https://www.jianshu.com/p/8896ed432dff.
 
 #import <Foundation/Foundation.h>
-#import <CommonCrypto/CommonCrypto.h>
+#import <CommonCrypto/CommonCryptor.h>
 
 
 @interface NSData (CommomCryptor)

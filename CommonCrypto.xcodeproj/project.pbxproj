@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B641674320C2B2D40073483F /* NSData+Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = B641674220C2B2D40073483F /* NSData+Digest.m */; };
+		B641674620C2B35C0073483F /* NSData+HMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = B641674520C2B35C0073483F /* NSData+HMAC.m */; };
 		B6F3177F20BEE25F009DD15C /* NSData+CustomPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F3177E20BEE25F009DD15C /* NSData+CustomPadding.m */; };
 		B6FD01B920BA888900127944 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FD01B820BA888900127944 /* AppDelegate.m */; };
 		B6FD01BC20BA888900127944 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FD01BB20BA888900127944 /* ViewController.m */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B641674120C2B2D40073483F /* NSData+Digest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Digest.h"; sourceTree = "<group>"; };
+		B641674220C2B2D40073483F /* NSData+Digest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+Digest.m"; sourceTree = "<group>"; };
+		B641674420C2B35C0073483F /* NSData+HMAC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+HMAC.h"; sourceTree = "<group>"; };
+		B641674520C2B35C0073483F /* NSData+HMAC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+HMAC.m"; sourceTree = "<group>"; };
 		B6F3177D20BEE25F009DD15C /* NSData+CustomPadding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+CustomPadding.h"; sourceTree = "<group>"; };
 		B6F3177E20BEE25F009DD15C /* NSData+CustomPadding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+CustomPadding.m"; sourceTree = "<group>"; };
 		B6FD01B420BA888900127944 /* CommonCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +115,10 @@
 			children = (
 				B6FD01B720BA888900127944 /* AppDelegate.h */,
 				B6FD01B820BA888900127944 /* AppDelegate.m */,
+				B641674120C2B2D40073483F /* NSData+Digest.h */,
+				B641674220C2B2D40073483F /* NSData+Digest.m */,
+				B641674420C2B35C0073483F /* NSData+HMAC.h */,
+				B641674520C2B35C0073483F /* NSData+HMAC.m */,
 				B6FD01ED20BA88E400127944 /* NSData+CommomCryptor.m */,
 				B6FD01EC20BA88E400127944 /* NSData+CommomCryptor.h */,
 				B6F3177D20BEE25F009DD15C /* NSData+CustomPadding.h */,
@@ -272,6 +282,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B641674320C2B2D40073483F /* NSData+Digest.m in Sources */,
+				B641674620C2B35C0073483F /* NSData+HMAC.m in Sources */,
 				B6FD01BC20BA888900127944 /* ViewController.m in Sources */,
 				B6FD01C720BA888B00127944 /* main.m in Sources */,
 				B6FD01B920BA888900127944 /* AppDelegate.m in Sources */,
