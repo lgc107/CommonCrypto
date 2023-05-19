@@ -35,6 +35,10 @@
     NSString *decryptString = [[NSString alloc] initWithData:decryptAnsix923Data  encoding:NSUTF8StringEncoding];
     NSLog(@"%@",decryptString);
     
+    
+    NSString *res1 =  [sourceData cc_hmacMD5StringWith:key];
+    NSString *res2 = [[NSString alloc] initWithData:[sourceData cc_hmacMD5DataWithKey:key] encoding:NSUTF8StringEncoding];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 

@@ -108,7 +108,7 @@
     NSData *sourceData =  bitPadding(operation, algorithm, padding, self);
     
     //    status = CCCryptorCreateWithMode(operation, mode, algorithm, ccNoPadding, ivData.bytes, keyData.bytes, keyData.length, NULL, 0, 0, kCCModeOptionCTR_LE, &cryptor);
-    status = CCCryptorCreateWithMode(operation, mode, algorithm, paddingMode, ivData.bytes, keyData.bytes, keyData.length, NULL, 0, 0, kCCModeOptionCTR_LE, &cryptor);
+    status = CCCryptorCreateWithMode(operation, mode, algorithm, paddingMode, ivData.bytes, keyData.bytes, keyData.length, NULL, 0, 0, kCCModeOptionCTR_BE, &cryptor);
     //  status = CCCryptorCreate( operation, algorithm, kCCOptionPKCS7Padding ,
     //                             [keyData bytes], [keyData length], [ivData bytes],
     //                             &cryptor );

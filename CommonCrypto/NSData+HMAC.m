@@ -83,7 +83,13 @@
     
     unsigned char result[size];
     CCHmac(alg, [keyData bytes], keyData.length, self.bytes, self.length, result);
-    return [NSData dataWithBytes:result length:size];
+    
+    const unsigned int hex_len = CC_MD5_DIGEST_LENGTH*2+2;
+    char hex[hex_len];
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
+        snprintf(&hex[i*2], hex_len-i*2, "%02x", result[i]);
+    }
+    return [NSData dataWithBytes:hex length:strlen(hex)];
 }
 
 - (NSString *)cc_hmacStringUsingAlg:(CCHmacAlgorithm)alg withKey:(id)key {
